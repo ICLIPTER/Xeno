@@ -1,10 +1,18 @@
-import { Loader2Icon } from "lucide-react";
+import { Loader2Icon, Github, Figma } from "lucide-react";
 import React, { useState } from "react";
+import LogoCloud from "../components/LogoCloud";
 
 const Home = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
+  const handleFigmaImport = () => {
+    alert("Figma import coming soon 🚀");
+  };
+
+  const handleGithubImport = () => {
+    alert("GitHub import coming soon 🐙");
+  };
 
   const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,9 +25,8 @@ const Home = () => {
       setLoading(false);
     }, 3000);
   };
-        
+
   return (
-    
     <section className="flex flex-col items-center text-white text-sm pb-20 px-4 font-poppins">
       <a
         href="https://prebuiltui.com"
@@ -70,17 +77,48 @@ const Home = () => {
           required
         />
         <button className="ml-auto flex items-center gap-2 bg-linear-to-r from-[#CB52D4] to-indigo-600 rounded-md px-4 py-2">
-          {!loading ? 'Create with AI' : (
+          {!loading ? (
+            "Create with AI"
+          ) : (
             <>
-            Creating <Loader2Icon className="animate-spin size-4 text-white"/>
+              Creating{" "}
+              <Loader2Icon className="animate-spin size-4 text-white" />
             </>
           )}
         </button>
       </form>
 
-      
+      <div className="flex flex-col items-center gap-4 mt-6 w-full max-w-2xl">
+        <div className="flex items-center gap-3 w-full">
+          <div className="h-px flex-1 bg-white/20" />
+          <span className="text-xs text-gray-300">OR IMPORT FROM</span>
+          <div className="h-px flex-1 bg-white/20" />
+        </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-16 md:gap-20 mx-auto mt-16">
+        <div className="flex gap-4 w-full">
+          <button
+            type="button"
+            onClick={handleFigmaImport}
+            className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition px-4 py-3"
+          >
+            <Figma className="size-4 text-pink-400" />
+            <span className="text-sm text-white">Figma</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleGithubImport}
+            className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition px-4 py-3"
+          >
+            <Github className="size-4 text-gray-300" />
+            <span className="text-sm text-white">GitHub</span>
+          </button>
+        </div>
+      </div>
+
+      <LogoCloud />
+
+      {/* <div className="flex flex-wrap items-center justify-center gap-16 md:gap-20 mx-auto mt-16">
         <img
           className="max-w-28 md:max-w-32"
           src="https://saasly.prebuiltui.com/assets/companies-logo/framer.svg"
@@ -106,7 +144,7 @@ const Home = () => {
           src="https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg"
           alt=""
         />
-      </div>
+      </div> */}
     </section>
   );
 };
