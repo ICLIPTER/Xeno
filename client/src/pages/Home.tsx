@@ -1,6 +1,8 @@
 import { Loader2Icon, Github, Figma } from "lucide-react";
 import React, { useState } from "react";
 import LogoCloud from "../components/LogoCloud";
+import HeroTitleSVG from "../components/HeroTitleSVG";
+import ProductSection from "../components/ProductSection";
 
 const Home = () => {
   const [input, setInput] = useState("");
@@ -56,12 +58,25 @@ const Home = () => {
         </p>
       </a>
 
-      <h1 className="text-center text-[40px] leading-12 md:text-6xl md:leading-17.5 mt-4 font-semibold max-w-3xl">
-        Turn thoughts into websites instantly, with AI.
+      <h1
+        className="text-center mt-25 max-w-3xl mx-auto
+  text-[44px] md:text-6xl
+  leading-[1.05]
+  font-bold
+  tracking-[-0.02em]"
+      >
+        What will you <HeroTitleSVG /> today?
       </h1>
 
-      <p className="text-center text-base max-w-md mt-2">
-        Create, customize and publish website faster than ever with our AI
+      <p
+        className="text-center mt-3 max-w-md mx-auto
+  text-[20px] md:text-base
+  font-medium
+  leading-relaxed
+  tracking-[-0.01em]
+  text-gray-500"
+      >
+        Create, customize and publish websites faster than ever with our AI
         Website Builder.
       </p>
 
@@ -116,35 +131,8 @@ const Home = () => {
         </div>
       </div>
 
-      <LogoCloud />
-
-      {/* <div className="flex flex-wrap items-center justify-center gap-16 md:gap-20 mx-auto mt-16">
-        <img
-          className="max-w-28 md:max-w-32"
-          src="https://saasly.prebuiltui.com/assets/companies-logo/framer.svg"
-          alt=""
-        />
-        <img
-          className="max-w-28 md:max-w-32"
-          src="https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg"
-          alt=""
-        />
-        <img
-          className="max-w-28 md:max-w-32"
-          src="https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg"
-          alt=""
-        />
-        <img
-          className="max-w-28 md:max-w-32"
-          src="https://saasly.prebuiltui.com/assets/companies-logo/microsoft.svg"
-          alt=""
-        />
-        <img
-          className="max-w-28 md:max-w-32"
-          src="https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg"
-          alt=""
-        />
-      </div> */}
+      <LogoCloud/>
+      <ProductSection />
     </section>
   );
 };
